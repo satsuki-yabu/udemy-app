@@ -1,10 +1,12 @@
 
-
+// divタグで囲む制約がある。しかし囲むといらないタグが→<></>で囲むと消える
 function App() {
-  // JSXは{}でjavascriptが記述できる。
-  const greeting = 'Hi'
-  const dom = <h1>{greeting}</h1>;
-  return dom;
+  return (
+    <>
+      <input type='text' onChange={()=>{console.log('I am clicked')}} />
+    </>
+  )
+  
 }
 
 export default App;
