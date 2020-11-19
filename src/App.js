@@ -1,9 +1,12 @@
 
-
+// divタグで囲む制約がある。しかし囲むといらないタグが→<></>で囲むと消える
 function App() {
   return (
-      <h1>Hello,World!!</h1>
-  );
+    <>
+      <input type='text' onChange={()=>{console.log('I am clicked')}} />
+    </>
+  )
+  
 }
 
 export default App;
