@@ -1,12 +1,12 @@
-
+import PropTypes from 'prop-types'
 // 親コンポーネント
 const App = () => {
 
 const profiles = [
   // arrayの中にハッシュを入れます。ハッシュ→:の前がkey,:の後ろがvalue。keyに基づいたvalueを受け取ることができる。
-  {name: 'Taro', age: '10'},
-  {name: 'Hanako', age: '5'},
-  {name: 'Noname'}
+  {name: 'Taro', age: 10},
+  {name: 'Hanako', age: 5},
+  {name: 'NoName', age: 6}
 ]
   return (
     <>
@@ -32,10 +32,13 @@ const profiles = [
         </>
       )
     }
-  
-  User.defaultProps = {
-    age: 1
-  }
+
+    // Userコンポーネントに対するpropTypesをここで定義する
+    // isRequiredは「必ず存在しないとだめですよ」というもの
+    User.propTypes = {
+      name: PropTypes.string,
+      age: PropTypes.number.isRequired
+    }
   
     
 export default App;
