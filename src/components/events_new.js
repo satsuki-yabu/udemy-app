@@ -26,7 +26,7 @@ constructor(props) {
   }
 
         render() {
-          const {handleSubmit} = this.props
+          const {handleSubmit,pristine,submitting} = this.props
 
         return (
           <>
@@ -34,7 +34,7 @@ constructor(props) {
             <div><Field label='Title' name='title' type='text' component={this.renderField} /></div>
             <div><Field label='Body' name='body' type='text' component={this.renderField} /></div>
             <div>
-              <input type='submit' value='submit' disabled={false}/>
+              <input type='submit' value='submit' disabled={pristine || submitting}/>
               <Link to='/'>Cancel</Link>
             </div>
           </form>
