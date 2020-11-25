@@ -12,6 +12,7 @@ constructor(props) {
 
   renderField(field){
     const {input,label,type,meta: {touched,error}} = field
+
     return(
     <div>
       <input {...input} placeholder={label} type={type}/>
@@ -43,7 +44,7 @@ constructor(props) {
      }
   }
 
-  const mapDispatchToProps = ({postEvent})
+  const mapDispatchToProps = {postEvent}
 const validate = values => {
   const errors =  {}
 
@@ -51,6 +52,5 @@ const validate = values => {
   if (!values.body)errors.body='Enter a body, Please'
   return errors
 }
-
 export default connect(null,mapDispatchToProps)(
   reduxForm({validate,form:'eventNewForm'})(EventsNew));

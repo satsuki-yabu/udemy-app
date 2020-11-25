@@ -18,10 +18,8 @@ class EventsIndex extends Component {
             </tr>
           ))
         }
-
         render() {
           const props = this.props
-
         return (
         <>
         <table>
@@ -32,7 +30,6 @@ class EventsIndex extends Component {
               <th>Body</th>
             </tr>
           </thead>
-
           <tbody>
             {this.renderEvents()}
           </tbody>
